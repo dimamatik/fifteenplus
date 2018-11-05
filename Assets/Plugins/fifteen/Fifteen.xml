@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fifteen</name>
+    </assembly>
+    <members>
+        <member name="M:Fifteen.ArrayExtensions.Swap``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Поменять местами элементы с индексами
+            </summary>
+            <returns>Возвращает ссылку на себя</returns>
+        </member>
+        <member name="M:Fifteen.ArrayExtensions.Circle``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Циклически переставить элементы между индексами, если индексы допустимы, в направлении от a к b
+            </summary>
+            <returns>Возвращает ссылку на себя</returns>
+        </member>
+        <member name="T:Fifteen.Direction">
+            <summary>
+            Направления, в котором двигается играемая фишка
+            </summary>
+        </member>
+        <member name="F:Fifteen.Direction.UP">
+            <summary>
+            Вверх
+            </summary>
+        </member>
+        <member name="F:Fifteen.Direction.DOWN">
+            <summary>
+            Вниз
+            </summary>
+        </member>
+        <member name="F:Fifteen.Direction.LEFT">
+            <summary>
+            Влево
+            </summary>
+        </member>
+        <member name="F:Fifteen.Direction.RIGHT">
+            <summary>
+            Вправо
+            </summary>
+        </member>
+        <member name="T:Fifteen.Game">
+            <summary>
+            Основной класс для игры на поле m*n 
+            </summary>
+        </member>
+        <member name="P:Fifteen.Game.Height">
+            <summary>
+            Высота игрового поля
+            </summary>
+        </member>
+        <member name="P:Fifteen.Game.Width">
+            <summary>
+            Ширина игрового поля
+            </summary>
+        </member>
+        <member name="F:Fifteen.Game._field">
+            <summary>
+            Поле с элементами
+            </summary>
+        </member>
+        <member name="P:Fifteen.Game.Item(System.Int32,System.Int32)">
+            <summary>
+            Достать фишку, лежащую в заданных координатах
+            </summary>
+        </member>
+        <member name="M:Fifteen.Game.EmptyIndex">
+            <summary>
+            Достать порядковый номер пустой фишки
+            </summary>
+        </member>
+        <member name="F:Fifteen.Game._max">
+            <summary>
+            Размер поля, фактически Width * Height
+            Одновременно - самый большой элемент
+            </summary>
+        </member>
+        <member name="F:Fifteen.Game._index">
+            <summary>
+            Индекс максимального элемента, для быстрого поиска
+            </summary>
+        </member>
+        <member name="M:Fifteen.Game.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Создать исходное прямоугольное поле с элементами 1...height*width
+            </summary>
+            <param name="height">Высота, больше 1</param>
+            <param name="width">Ширина, больше 1</param>
+        </member>
+        <member name="M:Fifteen.Game.Reset">
+            <summary>
+            Привести игровое поле в исходную позицию
+            </summary>
+        </member>
+        <member name="M:Fifteen.Game.Shuffle">
+            <summary>
+            Привести игровое поле в произвольную разрешимую позицию
+            </summary>
+        </member>
+        <member name="M:Fifteen.Game.Number">
+            <summary>
+            Вычислить текущее количество инверсий в расстановке
+            </summary>
+        </member>
+        <member name="M:Fifteen.Game.CheckSolvability">
+            <summary>
+            Проверить, имеет ли текущая комбинация решение
+            </summary>
+        </member>
+        <member name="M:Fifteen.Game.Play(Fifteen.Direction)">
+            <summary>
+            Передвинуть фишку в нужном направлении
+            </summary>
+            <returns>Возвращает TRUE, если удалось, FALSE иначе</returns>
+        </member>
+        <member name="M:Fifteen.Game.Play(System.Int32,System.Int32)">
+            <summary>
+            Передвинуть фишку, если она рядом с пустой клеткой
+            </summary>
+            <returns>Возвращает TRUE, если удалось, FALSE иначе</returns>
+        </member>
+        <member name="M:Fifteen.Game.Move(System.Int32,System.Int32)">
+            <summary>
+            Передвигает по змеевидному пути пустой элемент
+            </summary>
+            <returns>Возвращает TRUE, если удалось, FALSE иначе</returns>
+        </member>
+        <member name="M:Fifteen.Game.CheckVictory">
+            <summary>
+            Проверить, что все фишки на местах
+            </summary>
+        </member>
+    </members>
+</doc>
