@@ -36,6 +36,8 @@ public class GameField : MonoBehaviour
     private RectTransform[] _buttons = new RectTransform[0];
 
     private bool _inAnimation = false;
+    private int _rw = -1;
+    private int _rh = -1;
 
     public bool InAnimation
     {
@@ -251,6 +253,17 @@ public class GameField : MonoBehaviour
         _buttons[b] = rta;
 
         InAnimation = false;
+    }
+    private void LateUpdate()
+    {
+        if (Application.isPlaying == false || InAnimation) return;
+        if (_root == null || _prefab == null) return;
+        if ((int)_root.rect.width != _rw || (int)_root.rect.height != _rh)
+        {
+            _rw = (int)_root.rect.width;
+            _rh = (int)_root.rect.height;
+            AlignField();
+        }
     }
 
 #if UNITY_EDITOR
